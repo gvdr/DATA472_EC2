@@ -148,7 +148,7 @@ try:
     # Connect to the PostgreSQL database
     conn = psycopg2.connect(
         host="data472-tya51-database.cyi9p9kw8doa.ap-southeast-2.rds.amazonaws.com",
-        database="NZwater",
+        database="postgres",
         user="postgres",
         password="kPDqtBRfzbs680TsGKQj"
     )
