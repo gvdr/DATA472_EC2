@@ -223,13 +223,13 @@ try:
     # Create a table to store the observations
     create_table_query = '''
     CREATE TABLE IF NOT EXISTS observations (
-        observation_id SERIAL PRIMARY KEY,
         location_id INTEGER,
         quality_code VARCHAR(255),
         timestamp TIMESTAMP,
         value FLOAT,
+        PRIMARY KEY (location_id, timestamp),
         FOREIGN KEY (location_id) REFERENCES locations (location_id)
-    )
+        )
     '''
     cursor.execute(create_table_query)
 
