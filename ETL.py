@@ -29,7 +29,7 @@ location_data = {
 yesterday = datetime.now() - timedelta(days=1)
 yesterday_str = yesterday.strftime("%Y-%m-%d")
 # Define the start date and end date
-start_date = datetime(datetime.now().year, 5, 4)
+start_date = datetime(datetime.now().year, 1, 1)
 #end_date = datetime(start_date.year, start_date.month, 1) + timedelta(days=32)
 #end_date = end_date.replace(day=1) - timedelta(days=1)
 end_date = start_date + timedelta(days=1)
