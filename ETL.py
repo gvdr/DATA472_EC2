@@ -44,10 +44,10 @@ location_data = {
 #end_date_str = end_date.strftime("%Y-%m-%d")
 
 # Convert command line arguments to datetime objects
-start_date = datetime.strptime(args.startdate, "%Y%m%d")
-end_date = datetime.strptime(args.enddate, "%Y%m%d")
-start_date_str = start_date.strftime("%Y%m%d")
-end_date_str = end_date.strftime("%Y%m%d")
+start_date = datetime.strptime(args.startdate, "%Y-%m-%d")
+end_date = datetime.strptime(args.enddate, "%Y-%m-%d")
+start_date_str = start_date.strftime("%Y-%m-%d")
+end_date_str = end_date.strftime("%Y-%m-%d")
 
 # Define the query to get observations for a specific location and time period
 observations_data = {
