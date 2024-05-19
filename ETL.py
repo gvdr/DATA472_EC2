@@ -3,6 +3,13 @@ import json
 import psycopg2
 from datetime import datetime, timedelta
 import os
+import argparse
+
+# Parse command line arguments
+parser = argparse.ArgumentParser(description='Process start date and end date.')
+parser.add_argument('--startdate', type=str, required=True, help='Start date in the format YYYYMMDD')
+parser.add_argument('--enddate', type=str, required=True, help='End date in the format YYYYMMDD')
+args = parser.parse_args()
 
 url = 'https://apis.ecan.govt.nz/waterdata/observations/graphql'
 API_Key = 'ec9a031b4a674316b1bb21d9479f4595'
@@ -26,15 +33,21 @@ location_data = {
     '''
 }
 # Get yesterday's date
-yesterday = datetime.now() - timedelta(days=1)
-yesterday_str = yesterday.strftime("%Y-%m-%d")
+#yesterday = datetime.now() - timedelta(days=1)
+#yesterday_str = yesterday.strftime("%Y-%m-%d")
 # Define the start date and end date
-start_date = datetime(datetime.now().year, 1, 3)
+#start_date = datetime(datetime.now().year, 1, 3)
 #end_date = datetime(start_date.year, start_date.month, 1) + timedelta(days=32)
 #end_date = end_date.replace(day=1) - timedelta(days=1)
-end_date = start_date + timedelta(days=1)
-start_date_str = start_date.strftime("%Y-%m-%d")
-end_date_str = end_date.strftime("%Y-%m-%d")
+#end_date = start_date + timedelta(days=1)
+#start_date_str = start_date.strftime("%Y-%m-%d")
+#end_date_str = end_date.strftime("%Y-%m-%d")
+
+# Convert command line arguments to datetime objects
+start_date = datetime.strptime(args.startdate, "%Y%m%d")
+end_date = datetime.strptime(args.enddate, "%Y%m%d")
+start_date_str = start_date.strftime("%Y%m%d")
+end_date_str = end_date.strftime("%Y%m%d")
 
 # Define the query to get observations for a specific location and time period
 observations_data = {
