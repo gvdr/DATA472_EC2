@@ -8,7 +8,7 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 
 # Set up logging
-log = logging.getLogger(__name__)
+log = logging.getLogger('ETL')
 log.setLevel(logging.INFO)
 
 # Create a file handler that logs to a file every day
