@@ -234,6 +234,7 @@ try:
                 if record[5] != unit:
                     alert_message += f"Unit: {record[5]} -> {unit}\n"
                 print(alert_message)
+                log.info(alert_message)
                 # Update the record in the table
                 update_query = "UPDATE locations SET name = %s, geom = ST_SetSRID(ST_MakePoint(%s, %s), %s), type = %s, unit = %s WHERE location_id = %s"
                 cursor.execute(update_query, (name, nztmx, nztmy, GEO_TYPE, observation_type, unit, location_id))
