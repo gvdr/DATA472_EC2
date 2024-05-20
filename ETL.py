@@ -233,7 +233,7 @@ try:
                     alert_message += f"Type: {record[4]} -> {observation_type}\n"
                 if record[5] != unit:
                     alert_message += f"Unit: {record[5]} -> {unit}\n"
-                print(alert_message)
+                #print(alert_message)
                 log.info(alert_message)
                 # Update the record in the table
                 update_query = "UPDATE locations SET name = %s, geom = ST_SetSRID(ST_MakePoint(%s, %s), %s), type = %s, unit = %s WHERE location_id = %s"
@@ -248,13 +248,13 @@ try:
             VALUES (%s, %s, ST_SetSRID(ST_MakePoint(%s, %s), %s), %s, %s)
             """
             # Execute the query with the data
-            print("Location added to the database:")
-            print(f"Location ID: {location_id}")
-            print(f"Name: {name}")
-            print(f"nztmx: {nztmx}")
-            print(f"nztmy: {nztmy}")
-            print(f"Type: {observation_type}")
-            print(f"Unit: {unit}")
+            log.info("Location added to the database:")
+            log.info(f"Location ID: {location_id}")
+            log.info(f"Name: {name}")
+            log.info(f"nztmx: {nztmx}")
+            log.info(f"nztmy: {nztmy}")
+            log.info(f"Type: {observation_type}")
+            log.info(f"Unit: {unit}")
             cursor.execute(insert_query, (location_id, name, nztmx, nztmy, GEO_TYPE, observation_type, unit))
             conn.commit()
     # Create a table to store the observations
@@ -348,10 +348,10 @@ try:
         file.write(f"Start Date: {start_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         file.write(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         file.write(f"observation record number: {observation_number}\n") 
-    print("Dates appended to extraction_date.txt")
+    #print("Dates appended to extraction_date.txt")
     log.info(f"Start Date: {start_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     log.info(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"observation record number: {observation_number}")
+    #print(f"observation record number: {observation_number}")
     log.info(f"observation record number: {observation_number}")       
 except Exception as e:
     log.info(f"An error occurred: {e}")
