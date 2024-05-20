@@ -4,6 +4,29 @@ import psycopg2
 from datetime import datetime, timedelta
 import os
 import argparse
+import logging
+from logging.handlers import TimedRotatingFileHandler
+
+# Set up logging
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
+
+# Create a file handler that logs to a file every day
+handler = TimedRotatingFileHandler('log/ETL.log', when='midnight', interval=1)
+handler.suffix = '%Y%m%d'
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
+# Add the handler to the logger
+log.addHandler(handler)
+
+# Also log to console
+consoleHandler = logging.StreamHandler()
+consoleHandler.setFormatter(formatter)
+log.addHandler(consoleHandler)
+
+# Now you can use log.info(), log.warning(), etc.
+log.info('This is an info message')
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Process start date and end date.')
