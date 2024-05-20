@@ -26,7 +26,7 @@ consoleHandler.setFormatter(formatter)
 log.addHandler(consoleHandler)
 
 # Now you can use log.info(), log.warning(), etc.
-log.info('This is an info message')
+
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Process start date and end date.')
@@ -177,7 +177,7 @@ if changes != {}:
     alert_message = "Changes in metadata detected:\n"
     for key, value in changes.items():
         alert_message += f"{key}: {value}\n"
-    print(alert_message)
+    log.info(alert_message)
 conn = None
 cursor = None
 try:
@@ -238,7 +238,7 @@ try:
                 update_query = "UPDATE locations SET name = %s, geom = ST_SetSRID(ST_MakePoint(%s, %s), %s), type = %s, unit = %s WHERE location_id = %s"
                 cursor.execute(update_query, (name, nztmx, nztmy, GEO_TYPE, observation_type, unit, location_id))
                 conn.commit()
-                print("Record updated in the database.")
+                log.info("Record updated in the database.")
 
         else:
             # Insert the new observation into the table
@@ -348,9 +348,13 @@ try:
         file.write(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         file.write(f"observation record number: {observation_number}\n") 
     print("Dates appended to extraction_date.txt")
-    print(f"observation record number: {observation_number}")       
+    log.info(f"Start Date: {start_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    log.info(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    log.info(f"observation record number: {observation_number}\n")
+    print(f"observation record number: {observation_number}")
+    log.info(f"observation record number: {observation_number}")       
 except Exception as e:
-    print(f"An error occurred: {e}")
+    log.info(f"An error occurred: {e}")
 finally:    
     # Close the cursor and connection
     if cursor is not None:
