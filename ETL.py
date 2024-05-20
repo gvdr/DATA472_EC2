@@ -349,9 +349,8 @@ try:
         file.write(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         file.write(f"observation record number: {observation_number}\n") 
     print("Dates appended to extraction_date.txt")
-    log.info(f"Start Date: {start_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-    log.info(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-    log.info(f"observation record number: {observation_number}\n")
+    log.info(f"Start Date: {start_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    log.info(f"End Date: {end_date_str} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"observation record number: {observation_number}")
     log.info(f"observation record number: {observation_number}")       
 except Exception as e:
