@@ -1,0 +1,45 @@
+Start Date: 2024-01-01 - 2024-05-09 10:28:10
+End Date: 2024-01-02 - 2024-05-09 10:28:10
+observation record number: 27072
+Start Date: 2024-01-03 - 2024-05-09 11:04:57
+End Date: 2024-01-04 - 2024-05-09 11:04:57
+observation record number: 27072
+Start Date: 2024-01-05 - 2024-05-19 12:30:16
+End Date: 2024-01-05 - 2024-05-19 12:30:16
+observation record number: 13536
+Start Date: 2024-01-06 - 2024-05-19 12:31:33
+End Date: 2024-01-06 - 2024-05-19 12:31:33
+observation record number: 13536
+Start Date: 2024-01-07 - 2024-05-19 12:33:41
+End Date: 2024-01-07 - 2024-05-19 12:33:41
+observation record number: 13536
+Start Date: 2024-01-08 - 2024-05-19 12:39:24
+End Date: 2024-01-12 - 2024-05-19 12:39:24
+observation record number: 67336
+Start Date: 2024-01-13 - 2024-05-19 12:45:15
+End Date: 2024-01-17 - 2024-05-19 12:45:15
+observation record number: 66959
+Start Date: 2024-01-18 - 2024-05-19 12:52:16
+End Date: 2024-01-22 - 2024-05-19 12:52:16
+observation record number: 67162
+Start Date: 2024-01-23 - 2024-05-19 12:57:50
+End Date: 2024-01-27 - 2024-05-19 12:57:50
+observation record number: 67655
+Start Date: 2024-01-28 - 2024-05-19 13:08:48
+End Date: 2024-02-03 - 2024-05-19 13:08:48
+observation record number: 94056
+Start Date: 2024-02-04 - 2024-05-19 13:15:11
+End Date: 2024-02-08 - 2024-05-19 13:15:11
+observation record number: 67038
+Start Date: 2024-02-09 - 2024-05-19 13:23:04
+End Date: 2024-02-13 - 2024-05-19 13:23:04
+observation record number: 67069
+Start Date: 2024-02-14 - 2024-05-19 13:28:46
+End Date: 2024-02-18 - 2024-05-19 13:28:46
+observation record number: 67200
+Start Date: 2024-05-17 - 2024-05-20 01:00:04
+End Date: 2024-05-18 - 2024-05-20 01:00:04
+observation record number: 158
+Start Date: 2024-02-19 - 2024-05-20 08:58:51
+End Date: 2024-02-23 - 2024-05-20 08:58:51
+observation record number: 66958
