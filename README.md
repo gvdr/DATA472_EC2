@@ -20,29 +20,14 @@ Initially, a local PostgreSQL database is established for testing purposes, foll
 * **Data Structure and Visualization**: 
 API data scheme:
 1) Locations 
-
 ![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema1.jpg)
-
-3) Observations
-Fields	Type	Description
-locationId	Integer	ID
-timestamp	DateTime	Date and time the observation was taken
-value	Decimal	Flow value for the observation
-qualityCode	String	NEMS Quality Indicator of the observation value.
+2) Observations
+![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema2.jpg)
 Database table scheme:
 1) Locations 
-Fields	Type	Description
-locationId	Integer	ID
-name	String	
-geom	GEOMETRY	Point, SRID 2193 is for NZGD2000
-type	String	“Flow”
-unit	String	“m3/s”
+![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema3.jpg)
 2) Observations
-Fields	Type	Description
-locationId	Integer	ID
-timestamp	DateTime	Date and time the observation was taken
-value	Decimal	Flow value for the observation
-qualityCode	String	NEMS Quality Indicator of the observation value.
+![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema2.jpg)
 Data Visualization
 1)	Colours represent various river water qualities.
 2)	Sizes represent different river flow.
