@@ -36,6 +36,7 @@ Database table scheme:
 2) Observations
 
 ![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema2.jpg)
+
 Data Visualization
 1)	Colours represent various river water qualities.
 2)	Sizes represent different river flow.
