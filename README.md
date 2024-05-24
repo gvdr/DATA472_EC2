@@ -17,3 +17,86 @@ Utilizing the ECAN GraphQL API endpoint to extract:
 Detecting and transferring any variations in master data, like location information, to the database. Approximately half of the observation data records are blank and are thus deleted. Additionally, transformations are applied to associate each observation record with its corresponding location for insertion into a relational database.
 * **Database Setup and Data Loading**: 
 Initially, a local PostgreSQL database is established for testing purposes, followed by the setup of an RDS PostgreSQL database on AWS. The database is connected in the script using the command: `psql --host=data472-tya51-database.cyi9p9kw8doa.ap-southeast-2.rds.amazonaws.com --port=5432 --username=postgres --dbname=postgres`. Required tables are created, and clean data is loaded into the database.
+* **Data Structure and Visualization**: 
+API data scheme:
+1) Locations 
+
+|Fields	    |Type	    |Description                        |
+
+|-----------|-----------|-----------------------------------|
+
+|locationId	|Integer	|ID                                 |
+
+|name	    |String	    |                                   |
+
+|nztmx	    |Decimal	|NZTM X Co-ordinate of the location |
+
+|nztmy	    |Decimal	|NZTM Y Co-ordinate of the location |
+
+|type	    |String	    |“Flow”                             |
+
+|unit	    |String	    |“m3/s”                             |
+
+3) Observations
+Fields	Type	Description
+locationId	Integer	ID
+timestamp	DateTime	Date and time the observation was taken
+value	Decimal	Flow value for the observation
+qualityCode	String	NEMS Quality Indicator of the observation value.
+Database table scheme:
+1) Locations 
+Fields	Type	Description
+locationId	Integer	ID
+name	String	
+geom	GEOMETRY	Point, SRID 2193 is for NZGD2000
+type	String	“Flow”
+unit	String	“m3/s”
+2) Observations
+Fields	Type	Description
+locationId	Integer	ID
+timestamp	DateTime	Date and time the observation was taken
+value	Decimal	Flow value for the observation
+qualityCode	String	NEMS Quality Indicator of the observation value.
+Data Visualization
+1)	Colours represent various river water qualities.
+2)	Sizes represent different river flow.
+
+* **Logging**: The project uses Logging for logging.
+* **Scheduled Task**: A run_etl.sh file and cron job is set up to run ETL.py to download the data daily.
+### 4. Installation and Usage
+* **Pre-requisites**
+1. Python: This project is built with Python 3.12
+2. PostgreSQL: This project depends on PostgresSQL database to store data.
+* **Clone and install**
+1. Clone the repository: git clone git@github.com: DataAdvisory/EC2.git,   cd EC2
+2. Install dependencies: pip install -r requirements.txt
+* **Usage**
+1. Start the PostgreSQL database in RDS server.
+2. Configure cron job to run ETL.py.
+3. Start flaskapp.service and nginx reverse proxy to enable web API.
+4. Access web API: http://13.236.194.130/tya51/api/river/location (download all location data), http://13.236.194.130/tya51/api/river/observation/YYYYMMDD (download observation data of any specific day).
+### 5. Code Overview
+* ** Dependencies**
+Flask: For web API
+psycopg2: For GEOMETRY conversion
+Requests: For HTTP requests
+Pg: For connecting PostgreSQL
+Cron: For scheduling tasks
+Logging: For logging.
+* ** Dependencies**
+ETL: Download data through GraphQL API, transforming and cleansing data, and insert data into the PostgreSQL database.
+App: Set up web API endpoint service and output data.
+Run_etl.sh: Establish scheduling task to run ETL daily.
+### 6. Logging
+The project uses Logging for logging. Logs are written to the log file of ETL.log in the log directory.
+### 7. Scheduled Task
+A run_etl.sh and a cron job are set up to run ETL.py after midnight (Australia time) every day to download and update the data.
+run_etl.sh
+current_date=$(date +%Y%m%d)
+start_date=$(date -d "$current_date -5 day" +%Y-%m-%d)
+end_date=$(date -d "$current_date -4 day" +%Y-%m-%d)
+/usr/bin/python3 /home/ubuntu/EC2/ETL.py --startdate $start_date --enddate $end_date
+const job = new CronJob(
+    " 0 1 * * * /home/ubuntu/EC2/run_etl.sh"
+);
+job.sta
