@@ -50,9 +50,7 @@ qualityCode	String	NEMS Quality Indicator of the observation value.
 Data Visualization
 1)	Colours represent various river water qualities.
 2)	Sizes represent different river flow.
-3)	* **Logging**: The project uses Logging for logging.
-4)	* **Logging**: run_etl.sh
- 
+
 * **Logging**: The project uses Logging for logging.
 * **Scheduled Task**: A run_etl.sh file and cron job is set up to run ETL.py to download the data daily.
 ### 4. Installation and Usage
@@ -84,12 +82,9 @@ The project uses Logging for logging. Logs are written to the log file of ETL.lo
 ### 7. Scheduled Task
 A run_etl.sh and a cron job are set up to run ETL.py after midnight (Australia time) every day to download and update the data.
 run_etl.sh
-# Get the current date
 current_date=$(date +%Y%m%d)
-# Calculate the start and end dates
 start_date=$(date -d "$current_date -5 day" +%Y-%m-%d)
 end_date=$(date -d "$current_date -4 day" +%Y-%m-%d)
-# Run the Python script with the calculated dates
 /usr/bin/python3 /home/ubuntu/EC2/ETL.py --startdate $start_date --enddate $end_date
 const job = new CronJob(
     " 0 1 * * * /home/ubuntu/EC2/run_etl.sh"
