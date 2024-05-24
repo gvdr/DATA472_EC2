@@ -22,14 +22,17 @@ API data scheme:
 1) Locations
    
 ![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema1.jpg)
+
 2) Observations
 
 ![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema2.jpg)
 
 Database table scheme:
+
 1) Locations 
 
 ![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema3.jpg)
+
 2) Observations
 
 ![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema2.jpg)
