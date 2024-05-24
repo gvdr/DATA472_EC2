@@ -18,6 +18,7 @@ Detecting and transferring any variations in master data, like location informat
 * **Database Setup and Data Loading**: 
 Initially, a local PostgreSQL database is established for testing purposes, followed by the setup of an RDS PostgreSQL database on AWS. The database is connected in the script using the command: `psql --host=data472-tya51-database.cyi9p9kw8doa.ap-southeast-2.rds.amazonaws.com --port=5432 --username=postgres --dbname=postgres`. Required tables are created, and clean data is loaded into the database.
 * **Data Structure and Visualization**: 
+
 API data scheme:
 1) Locations
    
@@ -56,14 +57,14 @@ Data Visualization
 3. Start flaskapp.service and nginx reverse proxy to enable web API.
 4. Access web API: http://13.236.194.130/tya51/api/river/location (download all location data), http://13.236.194.130/tya51/api/river/observation/YYYYMMDD (download observation data of any specific day).
 ### 5. Code Overview
-* ** Dependencies**
+* **Dependencies**
 Flask: For web API
 psycopg2: For GEOMETRY conversion
 Requests: For HTTP requests
 Pg: For connecting PostgreSQL
 Cron: For scheduling tasks
 Logging: For logging.
-* ** Dependencies**
+* **Key Functions**
 ETL: Download data through GraphQL API, transforming and cleansing data, and insert data into the PostgreSQL database.
 App: Set up web API endpoint service and output data.
 Run_etl.sh: Establish scheduling task to run ETL daily.
