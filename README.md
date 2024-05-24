@@ -21,21 +21,7 @@ Initially, a local PostgreSQL database is established for testing purposes, foll
 API data scheme:
 1) Locations 
 
-|Fields	    |Type	    |Description                        |
-
-|-----------|-----------|-----------------------------------|
-
-|locationId	|Integer	|ID                                 |
-
-|name	    |String	    |                                   |
-
-|nztmx	    |Decimal	|NZTM X Co-ordinate of the location |
-
-|nztmy	    |Decimal	|NZTM Y Co-ordinate of the location |
-
-|type	    |String	    |“Flow”                             |
-
-|unit	    |String	    |“m3/s”                             |
+![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/Schema1.jpg)
 
 3) Observations
 Fields	Type	Description
