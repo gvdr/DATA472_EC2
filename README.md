@@ -20,14 +20,15 @@ Initially, a local PostgreSQL database is established for testing purposes, foll
 * **Data Structure and Visualization**: 
 API data scheme:
 1) Locations 
-Fields	Type	Description
-locationId	Integer	ID
-name	String	
-nztmx	Decimal	NZTM X Co-ordinate of the location
-nztmy	Decimal	NZTM Y Co-ordinate of the location
-type	String	“Flow”
-unit	String	“m3/s”
-2) Observations
+|Fields	    |Type	    |Description                        |
+|-----------|-----------|-----------------------------------|
+|locationId	|Integer	|ID                                 |
+|name	    |String	    |                                   |
+|nztmx	    |Decimal	|NZTM X Co-ordinate of the location |
+|nztmy	    |Decimal	|NZTM Y Co-ordinate of the location |
+|type	    |String	    |“Flow”                             |
+|unit	    |String	    |“m3/s”                             |
+3) Observations
 Fields	Type	Description
 locationId	Integer	ID
 timestamp	DateTime	Date and time the observation was taken
