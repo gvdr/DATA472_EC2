@@ -41,6 +41,7 @@ Database table scheme:
 Data Visualization
 1)	Colours represent various river water qualities.
 2)	Sizes represent different river flow.
+	![Alt text for the image](https://github.com/DataAdvisory/EC2/blob/main/RiverFlowQuality.png)
 
 * **Logging**: The project uses Logging for logging.
 * **Scheduled Task**: A run_etl.sh file and cron job is set up to run ETL.py to download the data daily.
