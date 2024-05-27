@@ -55,10 +55,9 @@ Data Visualization
 1. Start the PostgreSQL database in RDS server.
 2. Configure cron job to run ETL.py.
 3. Start flaskapp.service and nginx reverse proxy to enable web API.
-4. Access web API:
-   http://13.236.194.130/tya51/api/river/metadata (download masterdata),
-   http://13.236.194.130/tya51/api/river/location (download all location data),
-   http://13.236.194.130/tya51/api/river/observation/YYYYMMDD (download observation data of any specific day).
+4. Access master data: http://13.236.194.130/tya51/api/river/metadata
+5. Access location data: http://13.236.194.130/tya51/api/river/location 
+6. Access observation data: http://13.236.194.130/tya51/api/river/observation/YYYY-MM-DD
 ### 5. Code Overview
 * **Dependencies**
 Flask: For web API
