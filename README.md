@@ -84,3 +84,5 @@ const job = new CronJob(
     " 0 1 * * * /home/ubuntu/EC2/run_etl.sh"
 );
 job.sta
+### 8. Error Handling
+Error handling is implemented throughout the project, with errors being logged and, in critical cases, the process exiting with a non-zero status code.
